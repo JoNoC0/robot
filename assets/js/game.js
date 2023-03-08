@@ -1,3 +1,11 @@
+
+// function to generate a random numeric value
+var randomNumber = function(min, max) {
+  var value = Math.floor(Math.random() * (max - min + 1) + min);
+
+  return value;
+};
+
 // fight function (now with parameter for enemy's name) 
 var fight = function(enemy) {
     
@@ -59,8 +67,19 @@ var fight = function(enemy) {
   } // end of while loop
 }; // end of fight function
 
+var getPlayerName = function() {
+  var name = "";
+
+  while (name === "" || name === null) {
+    name = prompt("What is your robot's name?");
+  }
+  console.log("Your robot's name is " + name);
+  return name;
+};
+
 var playerInfo = {
-    name: window.prompt("What is your robot's name?"),
+
+    name: getPlayerName(),
     health: 100,
     attack: 10,
     money: 10,
@@ -117,6 +136,7 @@ var startGame = function() {
     if (playerInfo.health > 0) {
       // let player know what round they are in, remember that arrays start at 0 so it needs to have 1 added to it
       window.alert('Welcome to Robot Gladiators! Round ' + (i + 1));
+      
 
       // pick new enemy to fight based on the index of the enemy.names array
       var pickedEnemyObj = enemyInfo[i];
@@ -172,11 +192,7 @@ var endGame = function() {
 };
 
 // function to generate a random numeric value
-var randomNumber = function(min, max) {
-    var value = Math.floor(Math.random() * (max - min + 1) + min)
 
-    return value();
-}
 
 // go to shop between battles function
 var shop = function() {
