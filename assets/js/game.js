@@ -247,19 +247,10 @@ var shop = function() {
   shopOptionPrompt = parseInt(shopOptionPrompt);
   // use switch case to carry out action
   switch (shopOptionPrompt) {
-<<<<<<< HEAD
-    case 'REFILL':
-    case 'refill':
-      playerInfo.refillHealth();
-      break;
-    case 'UPGRADE':
-    case 'upgrade':
-=======
     case 1:
       playerInfo.refillHealth();
       break;
     case 2:
->>>>>>> develop
       playerInfo.upgradeAttack();
       break;
     case 3:
